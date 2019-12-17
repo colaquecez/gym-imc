@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <title>Calculo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <form id="calculo-form">
+      </br>
+      <label for="nome">Nome:</label>
+      <input type="text" class="form-control" id="nome" required>
+      </br>
+      <label for="altura">Altura(cm):</label>
+      <input type="number" class="form-control" id="altura" required>
+      </br>
+      <label for="peso">Peso(kg)</label>
+      <input type="number" class="form-control" id="peso" required>
+      </br>
+      <label for="idade">Idade:</label>
+      <input type="number" class="form-control" id="idade" required>
+      </br>
+
+
+      <label>Gênero:</label>
+
+      </br>
+
+      <div class="btn-group btn-group-toggle btn-block" id="genero" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="options_genero" value="m" id="option1" autocomplete="off" checked>
+          Masculino
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options_genero" value="f" id="option2" autocomplete="off"> Feminino
+        </label>
+
+      </div>
+    </br>
+  </br>
+
+      <label>Objetivo:</label>
+    </br>
+      <div class="btn-group btn-group-toggle btn-block" id="objetivo" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="options_objetivo" value="ganhar" id="option1" autocomplete="off" checked>
+          Ganho de peso
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options_objetivo" value="perder" id="option2" autocomplete="off"> Perca de peso
+        </label>
+
+      </div>
+
+
+      </br>
+      </br>
+      <label>Nível de atividade física:</label>
+      </br>
+
+      <div class="btn-group btn-group-toggle btn-block" id="opcoes" data-toggle="buttons">
+        <label class="btn btn-secondary active" data-toggle="tooltip" title="Pouco ou nenhum exercício diário">
+          <input type="radio" name="options" value="1.20" id="option1" autocomplete="off" checked> Sedentário
+        </label>
+        <label class="btn btn-secondary" data-toggle="tooltip" title="Exerc. Leve - 1 a 3 dias na semana">
+          <input type="radio" name="options" value="1.37" id="option2" autocomplete="off"> Levemente Ativo
+        </label>
+        <label class="btn btn-secondary" data-toggle="tooltip" title="Exerc. Moderado - 3 a 5 dias na semana">
+          <input type="radio" name="options" value="1.55" id="option3" autocomplete="off"> Moderadamente Ativo
+        </label>
+        <label class="btn btn-secondary" data-toggle="tooltip" title="Exerc. Pesado - 6 a 7 dias na semana">
+          <input type="radio" name="options" value="1.72" id="option3" autocomplete="off"> Bastante Ativo
+        </label>
+        <label class="btn btn-secondary" data-toggle="tooltip"
+          title="Exerc. Pesado todos os dias da semana ou treinos 2x ao dia">
+          <input type="radio" name="options" value="1.90" id="option3" autocomplete="off"> Muito Ativo
+        </label>
+      </div>
+
+
+      <!-- Button trigger modal -->
+      </br>
+      </br>
+      <button type="submit" class="btn btn-primary btn-block">
+        Calcular
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Resultado...</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="template"></div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" onclick="imprimir();" class="btn btn-primary">Imprimir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <script src="JS/util.js"></script>
+  <script src='JS/calcularTMB.js'></script>
+  <script src='JS/imprimir.js'></script>
+
+
+
+
+</body>
+
+</html>
